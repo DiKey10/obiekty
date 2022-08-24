@@ -13,5 +13,20 @@ print(__str__)
 print(mustang)
 
 
+def __repr__(self):
+    return f"Car(make={self.make} model={self.model_name}, top_speed={self.top_speed}, color={self.color})"
 
+car = Car(make="Ford", model_name="Mustang", top_speed=250, color="Red")
+car
 
+def __eq__(self, other):
+    return (
+        self.make == other.make and
+        self.model_name == other.model_name and
+        self.top_speed == other.top_speed and
+        self.color == other.color
+    )
+
+car_one = Car(make="Ford", model_name="Mustang", top_speed=250, color="Red")
+car_two = Car(make="Ford", model_name="Mustang", top_speed=250, color="Red")
+car_one == car_two
