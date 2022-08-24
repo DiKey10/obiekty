@@ -1,0 +1,14 @@
+class ksiazka_adresowa:
+  def __init__(self,imie, nazwisko, firma, stanowisko, mail):
+    self.imie = imie
+    self.nazwisko = nazwisko
+    self.firma = firma
+    self.stanowisko = stanowisko
+    self.mail = mail
+
+pierwszy = ksiazka_adresowa(imie="Aleksander",nazwisko="Kowalski",firma="Listenin",stanowisko="Mathematician",mail="AleksanderKowalski@armyspy.com")
+drugi = ksiazka_adresowa(imie="Rajmund ",nazwisko="Kaminski",firma="abc",stanowisko="sprzedawca",mail="Rajmund@armyspy.com")
+trzeci = ksiazka_adresowa(imie="Halina  ",nazwisko="Sawicka",firma="abdc",stanowisko="sprzedawca",mail="Sawicka@armyspy.com")
+czwarty = ksiazka_adresowa(imie="Gabryjel ",nazwisko=" Walczak",firma="abc",stanowisko="CEO",mail="Gabryjel@armyspy.com")
+klasa= [pierwszy, drugi, trzeci, czwarty]
+s
