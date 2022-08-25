@@ -6,7 +6,6 @@ for _ in range(5):
     job = fake.job()
     mail =fake.email()
     adr = fake.address()
-
     wizytowka=[name,job,mail,adr]
     print(wizytowka)
 """
