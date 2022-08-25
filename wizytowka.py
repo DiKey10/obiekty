@@ -8,32 +8,40 @@ class wizytowka:
         self.praca=praca
         self.mail=mail
         self.adres=adres
+
     def __str__(self):
         return f'{self.imie} {self.nazwisko} {self.praca} {self.mail} {self.adres}'
+
     @property
-    def dlugosc_znakow(self):
+    def label_length(self):
         return len(self.imie+self.nazwisko)+1
+
     def contact(self):
         return f'Kontaktuję się z {self.imie} {self.nazwisko} {self.praca} {self.mail}'
 
 
-wiz1=wizytowka(fake.first_name(),fake.last_name(),fake.job(),fake.email(),fake.address())
-wiz2=wizytowka(fake.first_name(),fake.last_name(),fake.job(),fake.email(),fake.address())
-wiz3=wizytowka(fake.first_name(),fake.last_name(),fake.job(),fake.email(),fake.address())
-wiz4=wizytowka(fake.first_name(),fake.last_name(),fake.job(),fake.email(),fake.address())
-wiz5=wizytowka(fake.first_name(),fake.last_name(),fake.job(),fake.email(),fake.address())
-
-zlot_pizzy=[wiz1,wiz2,wiz3,wiz4,wiz5]
-
-for n in zlot_pizzy:
-#    print(n)
-#    print(n.dlugosc_znakow)
-    print(n.contact())
-
-
+class BaseContact(wizytowka):
+    def __init__(self, fone , *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fone=fone
+    def contact(self):
+        return f'Wybieram numer {self.fone} i dzwonie do {self.imie} {self.nazwisko}'
+class BusinessContact(wizytowka):
+    def __init__(self, workfone, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.workfone=workfone
+    def contact(self):
+        return f'Wybieram numer {self.workfone} i dzwonie do {self.imie} {self.nazwisko}'
 
 
+osoba1 = BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
+osoba2=BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
+osoba3=BusinessContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address() )
 
+osoba4=BusinessContact(workfone="+48 508094821",imie="zbyszek",nazwisko=fake.last_name(), praca=fake.job(),mail="dsa@dksa.pl",adres=" tutaj")
+
+print(osoba4.contact())
+print(osoba4.label_length)
 #print(wiz1.__dict__)
 #tak sie nie robi
 #print(fake.first_name())

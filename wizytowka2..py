@@ -16,7 +16,7 @@ class wizyt:
         return f'Kontaktuje sie z {self.imie} {self.nazwisko} pracuje jako {self.mail}'
 
 
-osoba1 = wizyt(fake.first_name() , fake.last_name() , fake.email())
+
 osoba2=wizyt(fake.first_name(),fake.last_name(),fake.email())
 osoba3=wizyt(fake.first_name(),fake.last_name(),fake.email())
 
