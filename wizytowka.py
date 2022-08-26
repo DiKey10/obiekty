@@ -37,7 +37,7 @@ x=''
 ilosc=''
 def create_contact(x,ilosc):
     print("Wybierz rodzaj (normal = 1/biznes = 2) i ilosc wizytowek")
-    for x in range(ilosc):
+    for y in range(ilosc):
         if x == 1:
             kontakt = BaseContact(fake.phone_number(), fake.first_name(), fake.last_name(), fake.job(), fake.email(),
                         fake.address())
@@ -49,9 +49,9 @@ def create_contact(x,ilosc):
         else:
             print("Miales wybrac normal lub biznes")
 
-print(create_contact(x=2,ilosc=3))
+print(create_contact(x=1,ilosc=4))
 
-"""
+
 osoba1 = BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba2=BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba3=BusinessContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address() )
@@ -65,4 +65,3 @@ print(osoba4.label_length)
 #print(fake.first_name())
 #print(fake.last_name())
 
-"""
