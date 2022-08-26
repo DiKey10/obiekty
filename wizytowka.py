@@ -34,6 +34,23 @@ class BusinessContact(wizytowka):
         return f'Wybieram numer {self.workfone} i dzwonie do {self.imie} {self.nazwisko}'
 
 
+def create_contact(x,y):
+    print("Wybierz rodzaj (normal = 1/biznes = 2) i ilosc wizytowek")
+    for x in y:
+        if x == 1:
+            kontakt = BaseContact(fake.phone_number(), fake.first_name(), fake.last_name(), fake.job(), fake.email(),
+                        fake.address())
+            print(kontakt)
+        elif x== 2:
+            kontakt = BaseContact(fake.phone_number(), fake.first_name(), fake.last_name(), fake.job(), fake.email(),
+                        fake.address())
+            print(kontakt)
+        else:
+            print("Miales wybrac normal lub biznes")
+
+print(create_contact(x==1,y==2))
+
+
 osoba1 = BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba2=BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba3=BusinessContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address() )
