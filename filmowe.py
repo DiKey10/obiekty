@@ -21,7 +21,7 @@ class serial(film):
         self.numer_sezonu = numer_sezonu
 
     def __str__(self):
-        return f'{self.tytul} S{self.numer_sezonu}E{self.numer_odcinka} '
+        return f'{self.tytul} S{self.numer_sezonu:02d}E{self.numer_odcinka:02d} '
 
 
 film1=film("IT",2021,"horror",1)
@@ -29,4 +29,4 @@ film2=film("Bodygard",1999,"Dramat",0)
 serial1=serial(23,5,"GoT",2018-2020,"fantasy",0)
 serial2=serial(8,3,"Ty",2018-2020,"fantasy",1)
 
-print(serial1)
+print(serial2)
