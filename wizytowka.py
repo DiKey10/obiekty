@@ -33,24 +33,25 @@ class BusinessContact(wizytowka):
     def contact(self):
         return f'Wybieram numer {self.workfone} i dzwonie do {self.imie} {self.nazwisko}'
 
-
-def create_contact(x,y):
+x=''
+ilosc=''
+def create_contact(x,ilosc):
     print("Wybierz rodzaj (normal = 1/biznes = 2) i ilosc wizytowek")
-    for x in y:
+    for x in range(ilosc):
         if x == 1:
             kontakt = BaseContact(fake.phone_number(), fake.first_name(), fake.last_name(), fake.job(), fake.email(),
                         fake.address())
             print(kontakt)
         elif x== 2:
-            kontakt = BaseContact(fake.phone_number(), fake.first_name(), fake.last_name(), fake.job(), fake.email(),
+            kontakt = BusinessContact(fake.phone_number(), fake.first_name(), fake.last_name(), fake.job(), fake.email(),
                         fake.address())
             print(kontakt)
         else:
             print("Miales wybrac normal lub biznes")
 
-print(create_contact(x==1,y==2))
+print(create_contact(x=2,ilosc=3))
 
-
+"""
 osoba1 = BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba2=BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba3=BusinessContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address() )
@@ -63,3 +64,5 @@ print(osoba4.label_length)
 #tak sie nie robi
 #print(fake.first_name())
 #print(fake.last_name())
+
+"""
