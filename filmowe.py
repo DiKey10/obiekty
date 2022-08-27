@@ -40,12 +40,16 @@ print(serial2)
 biblioteka= (film1,film2,serial1,serial2)
 randomowo=random.choice(biblioteka)
 
-
 def generate_views(x):
     n=random.randint(1,100)
-    x.liczba_odtworzen +n
+    x.liczba_odtworzen = n
+    print(n)
+
+#from petla in range(10):
+#    generate_views(randomowo)
 
 
+print(randomowo.liczba_odtworzen)
 generate_views(randomowo)
 for film in biblioteka:
     print(film.__dict__)
