@@ -15,10 +15,6 @@ class film:
         _ilosc_odtworzen = _ilosc_odtworzen + 1
     def __str__(self):
         return f'{self.tytul} ({self.rok_produkcji}) '
-    def get_movies(self):
-        print(sorted(film))
-
-
 class serial(film):
     def __init__(self, numer_odcinka, numer_sezonu, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -26,8 +22,7 @@ class serial(film):
         self.numer_sezonu = numer_sezonu
     def __str__(self):
         return f'{self.tytul} S{self.numer_sezonu:02d}E{self.numer_odcinka:02d} '
-    def get_serials(self):
-        print(sorted(serial))
+
 
 
 
@@ -45,8 +40,14 @@ def generate_views(x):
     x.liczba_odtworzen = n
     print(n)
 
+"""
+def get_serials(self):
+    print(sorted(serial))
+def get_movies(self):
+    print(sorted(film))
 #from petla in range(10):
 #    generate_views(randomowo)
+"""
 
 
 print(randomowo.liczba_odtworzen)
