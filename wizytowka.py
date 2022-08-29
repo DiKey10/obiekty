@@ -32,7 +32,6 @@ class BusinessContact(wizytowka):
         self.workfone=workfone
     def contact(self):
         return f'Wybieram numer {self.workfone} i dzwonie do {self.imie} {self.nazwisko}'
-
 x=''
 ilosc=''
 def create_contact(x,ilosc):
@@ -55,8 +54,10 @@ print(create_contact(x=1,ilosc=4))
 osoba1 = BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba2=BaseContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address())
 osoba3=BusinessContact(fake.phone_number(),fake.first_name() , fake.last_name() ,  fake.job(), fake.email(),fake.address() )
-
 osoba4=BusinessContact(workfone="+48 508094821",imie="zbyszek",nazwisko=fake.last_name(), praca=fake.job(),mail="dsa@dksa.pl",adres=" tutaj")
+lista=[osoba1,osoba2,osoba3,osoba4]
+by_name = sorted(lista,key=lambda wizytowka: wizytowka.nazwisko)
+
 
 print(osoba4.contact())
 print(osoba4.label_length)
@@ -65,3 +66,4 @@ print(osoba4.label_length)
 #print(fake.first_name())
 #print(fake.last_name())
 
+print(by_name)
